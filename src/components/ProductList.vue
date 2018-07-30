@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import {mapState, mapGetters, mapActions} from 'vuex'
 export default {
     data () {
         return {
@@ -19,21 +20,22 @@ export default {
         }
     },
     computed: {
-        products () {
-            return this.$store.state.products
-        },
-        productIsStock () {
-            return this.$store.getters.productIsStock
-        }
+        ...mapState ({
+            products: state => state.products
+        }),
+        ...mapGetters ({
+            productIsStock:  'productIsStock'
+        })
     },
     methods: {
-        addProductToCart (product) {
-            this.$store.dispatch('addProductToCart', product)
-        }
+        ...mapActions ({
+            fetchProducts: 'fetchProducts',
+            addProductToCart: 'addProductToCart'
+        })
     },
     created () {
         this.loading = true
-        this.$store.dispatch('fetchProducts')
+        this.fetchProducts()
             .then(() => this.loading = false)
     }
 }
