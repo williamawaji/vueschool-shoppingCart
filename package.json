@@ -2,7 +2,7 @@
   "name": "vueschool-shopping-cart",
   "version": "1.0.0",
   "description": "A Vue.js project to learn vuex.",
-  "author": "William Awaji <william.hiroshi@gmail.com>",
+  "author": "William Awaji",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
