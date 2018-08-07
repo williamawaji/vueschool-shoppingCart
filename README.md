@@ -1,4 +1,4 @@
-# vueschool-shopping-cart
+# vueschool-vuex-shopping-cart
 
 Created a shopping cart to learn vuex. At first with Vue and then progressively diving into Vuex features. 
 
